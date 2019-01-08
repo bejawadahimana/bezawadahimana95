@@ -1,0 +1,224 @@
+ubuntu@ip-172-31-89-9:~$ sudo -i
+root@ip-172-31-89-9:~#
+1. open the new tab inn that type https://get.docker.com
+ in that copy the 2commands and paste it on the putty. 
+
+root@ip-172-31-89-9:~# curl -fsSL https://get.docker.com -o get-docker.sh
+root@ip-172-31-89-9:~# sh get-docker.sh
+
+2. root@ip-172-31-89-9:~#apt-get install docker 
+
+3. root@ip-172-31-89-9:~#docker --version
+
+4. check for the docker images by using the command
+    root@ip-172-31-89-9:~#docker images
+
+5. there is no docker images and then pull the docker image by using the command
+   root@ip-172-31-89-9:~#docker pull ubuntu -->image name 
+
+6.  check whether the docker images is created are not  
+    root@ip-172-31-89-9:~#docker images
+
+7. to check the running containers process by using the command
+    root@ip-172-31-89-9:~#docker ps
+
+8. to run the image
+   root@ip-172-31-89-9:~# docker run -ti --name=ubuntu ubuntu /bin/bash
+
+9. login to the container by pressing ctrl+p+q 
+    root@ad120491a954:/# root@ip-172-31-89-9:~#  
+
+10. go to the https://github.com/docker/compose/releases/ in that copy the commands and paste it on the putty 
+   root@ip-172-31-89-9:~# curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose 
+-------------------after that cmd is executed it shows like above---------------------------
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   617    0   617    0     0   6706      0 --:--:-- --:--:-- --:--:--  6706
+100 11.2M  100 11.2M    0     0  32.5M      0 --:--:-- --:--:-- --:--:-- 32.5M 
+-------------------------------------------------------------------------------------------------------
+11. root@ip-172-31-89-9:~# chmod +x /usr/local/bin/docker-compose 
+
+12. root@ip-172-31-89-9:~# mkdir dockercompose
+
+13. root@ip-172-31-89-9:~# cd dockercompose
+
+14. root@ip-172-31-89-9:~/dockercompose# touch docker-compose.yml
+
+15. root@ip-172-31-89-9:~/dockercompose# vi docker-compose.yml
+version: '2'
+services:
+        mysql:
+                image: mysql
+                environment:
+                        MYSQL_ROOT_PASSWORD: password
+        wordpress:
+                 image: wordpress
+                 ports:
+                 - 8080:80
+                 environment:
+                         WORDPRESS_DB_PASSWORD: password
+
+16.  root@ip-172-31-89-9:~/dockercompose# vi docker-compose.yml
+
+17. root@ip-172-31-89-9:~/dockercompose# docker-compose config
+services:
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    image: mysql
+  wordpress:
+    environment:
+      WORDPRESS_DB_PASSWORD: password
+    image: wordpress
+    ports:
+    - 8080:80/tcp
+version: '2.0'
+
+18. root@ip-172-31-89-9:~/dockercompose# docker-compose up -d 
+------------------------------------------------------------------------------------
+Creating network "dockercompose_default" with the default driver
+Pulling mysql (mysql:)...
+latest: Pulling from library/mysql
+a5a6f2f73cd8: Pull complete
+936836019e67: Pull complete
+283fa4c95fb4: Pull complete
+1f212fb371f9: Pull complete
+e2ae0d063e89: Pull complete
+5ed0ae805b65: Pull complete
+0283dc49ef4e: Pull complete
+a7e1170b4fdb: Pull complete
+88918a9e4742: Pull complete
+241282fa67c2: Pull complete
+b0fecf619210: Pull complete
+bebf9f901dcc: Pull complete
+Pulling wordpress (wordpress:)...
+latest: Pulling from library/wordpress
+a5a6f2f73cd8: Already exists
+633e0d1cd2a3: Pull complete
+fcdfdf7118ba: Pull complete
+4e7dc76b1769: Pull complete
+c425447c8835: Pull complete
+75780b7b9977: Pull complete
+33ed51bc30e8: Pull complete
+7c4215700bc4: Pull complete
+d4f613c1e621: Pull complete
+de5465a3fde0: Pull complete
+6d373ffaf200: Pull complete
+991bff14f001: Pull complete
+d0a8c1ecf326: Pull complete
+aa3627a535bb: Pull complete
+a36be75bb622: Pull complete
+98ebddb8e6ca: Pull complete
+ed6e19b74de1: Pull complete
+af6b8590c3cf: Pull complete
+efed8fa1fddf: Pull complete
+Creating dockercompose_mysql_1     ... done
+Creating dockercompose_wordpress_1 ... done
+-------------------------------------------------------------------------------------
+19. root@ip-172-31-89-9:~/dockercompose# docker-compose down 
+-----------------------------------------------------------------------
+Stopping dockercompose_wordpress_1 ... done
+Stopping dockercompose_mysql_1     ... done
+Removing dockercompose_wordpress_1 ... done
+Removing dockercompose_mysql_1     ... done
+Removing network dockercompose_default
+------------------------------------------------------------------------------ 
+20. take the dockercompose ec2instance ipaddress and paste it on the empty tab and typing this address (54.175.144.206:8080)  
+
+-------------------------------*wordpress example*------------------------------
+1. root@ip-172-31-89-9:~# cd wordpress
+2. root@ip-172-31-89-9:~/wordpress# ls
+docker-compose.yml
+3. root@ip-172-31-89-9:~/wordpress# vi docker-compose.yml
+
+version: "3.3"
+
+services:
+   db:
+    image: mysql:5.7
+    volumes:
+       - db_data:/var/lib/mysql
+    restart: always
+    environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     ports:
+         - "8000:80"
+     restart: always
+     environment:
+             WORDPRESS_DB_HOST: db:3306 
+             WORDPRESS_DB_USER: wordpress
+             WORDPRESS_DB_PASSWORD: wordpress
+volumes:
+       db_data:
+4. root@ip-172-31-89-9:~/wordpress# docker-compose config
+services:
+  db:
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_USER: wordpress
+    image: mysql:5.7
+    restart: always
+    volumes:
+    - db_data:/var/lib/mysql:rw
+  wordpress:
+    depends_on:
+    - db
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_USER: wordpress
+    image: wordpress:latest
+    ports:
+    - published: 8000
+      target: 80
+    restart: always
+version: '3.3'
+volumes:
+  db_data: {}
+
+5. root@ip-172-31-89-9:~/wordpress# docker-compose up -d 
+
+Creating network "wordpress_default" with the default driver
+Creating volume "wordpress_db_data" with default driver
+Pulling db (mysql:5.7)...
+5.7: Pulling from library/mysql
+a5a6f2f73cd8: Already exists
+936836019e67: Already exists
+283fa4c95fb4: Already exists
+1f212fb371f9: Already exists
+e2ae0d063e89: Already exists
+5ed0ae805b65: Already exists
+0283dc49ef4e: Already exists
+a7905d9fbbea: Pull complete
+cd2a65837235: Pull complete
+5f906b8da5fe: Pull complete
+e81e51815567: Pull complete
+Creating wordpress_db_1 ... done
+Creating wordpress_wordpress_1 ... done
+
+6. root@ip-172-31-89-9:~# cd /var/lib/docker/volumes (docker default directory) 
+
+7. root@ip-172-31-89-9:/var/lib/docker/volumes# ls (to check the volume is created)
+0342184652f7a879ae43b812891cd5d3f48b13ae89b97e71e2e1dad2c5a3727a
+519e6f092645441b209b26c0c4f237e8e99ffb95e5de3b6ab7952f60656a2c77
+6e3e1f16560b7c52cebbd7303b46198cdccc31ca866678f06265903ded8e23b0
+ca06344089bdbe33045ee251362c07a6f201031f8de7190aea119804dc2cd181
+cb56f5016bd93632f4622c4f6204961952b58b32d20fc83787ab853fd2c0af12
+metadata.db
+wordpress_db_data
+
+8. take the empty tab and paste the docker-compose instance ip with :8000
+(18.233.152.12:8000)  
+
+-----------------------------------------------------------------------------------------
+                          

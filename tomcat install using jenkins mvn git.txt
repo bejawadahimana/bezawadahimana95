@@ -1,0 +1,696 @@
+
+
+
+ubuntu@ip-172-31-87-8:~$ sudo -i
+root@ip-172-31-87-8:~# java -version
+
+Command 'java' not found, but can be installed with:
+
+apt install default-jre
+apt install openjdk-11-jre-headless
+apt install openjdk-8-jre-headless
+
+root@ip-172-31-87-8:~# clear
+root@ip-172-31-87-8:~# add-apt-repository ppa:wedup8team/java
+Cannot add PPA: 'ppa:~wedup8team/ubuntu/java'.
+ERROR: '~wedup8team' user or team does not exist.
+root@ip-172-31-87-8:~# add-apt-repository ppa:wedupd8team/java
+Cannot add PPA: 'ppa:~wedupd8team/ubuntu/java'.
+ERROR: '~wedupd8team' user or team does not exist.
+root@ip-172-31-87-8:~# apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:4 http://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse Sources [181 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/restricted Sources [5324 B]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main Sources [829 kB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe Sources [9051 kB]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [8570 kB]
+Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe Translation-en [4941 kB]
+Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [151 kB]
+Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse Translation-en [108 kB]
+Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main Sources [224 kB]
+Get:14 http://security.ubuntu.com/ubuntu bionic-security/universe Sources [28.6 kB]
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted Sources [2064 B]
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse Sources [3824 B]
+Get:17 http://security.ubuntu.com/ubuntu bionic-security/main Sources [66.7 kB]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe Sources [121 kB]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [476 kB]
+Get:20 http://security.ubuntu.com/ubuntu bionic-security/multiverse Sources [1336 B]
+Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main Translation-en [177 kB]
+Get:22 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [235 kB]
+Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [6992 B]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted Translation-en [3076 B]
+Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [706 kB]
+Get:26 http://security.ubuntu.com/ubuntu bionic-security/main Translation-en [88.9 kB]
+Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe Translation-en [171 kB]
+Get:28 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [110 kB]
+Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [6372 B]
+Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse Translation-en [3356 B]
+Get:31 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe Sources [2068 B]
+Get:32 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [3468 B]
+Get:33 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe Translation-en [1604 B]
+Get:34 http://security.ubuntu.com/ubuntu bionic-security/universe Translation-en [62.2 kB]
+Get:35 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [1440 B]
+Get:36 http://security.ubuntu.com/ubuntu bionic-security/multiverse Translation-en [996 B]
+Fetched 26.6 MB in 5s (5356 kB/s)
+Reading package lists... Done
+root@ip-172-31-87-8:~# add-apt-repository ppa:wedupd8team/java
+Cannot add PPA: 'ppa:~wedupd8team/ubuntu/java'.
+ERROR: '~wedupd8team' user or team does not exist.
+root@ip-172-31-87-8:~# apt-get install oracle-java8-installer
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Package oracle-java8-installer is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'oracle-java8-installer' has no installation candidate
+root@ip-172-31-87-8:~# java -version
+
+Command 'java' not found, but can be installed with:
+
+apt install default-jre
+apt install openjdk-11-jre-headless
+apt install openjdk-8-jre-headless
+
+root@ip-172-31-87-8:~# apt install openjdk-8-jre-headless
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  ca-certificates-java fontconfig-config fonts-dejavu-core java-common
+  libavahi-client3 libavahi-common-data libavahi-common3 libcups2
+  libfontconfig1 libjpeg-turbo8 libjpeg8 liblcms2-2 libnspr4 libnss3
+  libpcsclite1 libxi6 libxrender1 libxtst6 x11-common
+Suggested packages:
+  default-jre cups-common liblcms2-utils pcscd libnss-mdns fonts-dejavu-extra
+  fonts-ipafont-gothic fonts-ipafont-mincho fonts-wqy-microhei
+  fonts-wqy-zenhei fonts-indic
+The following NEW packages will be installed:
+  ca-certificates-java fontconfig-config fonts-dejavu-core java-common
+  libavahi-client3 libavahi-common-data libavahi-common3 libcups2
+  libfontconfig1 libjpeg-turbo8 libjpeg8 liblcms2-2 libnspr4 libnss3
+  libpcsclite1 libxi6 libxrender1 libxtst6 openjdk-8-jre-headless x11-common
+0 upgraded, 20 newly installed, 0 to remove and 120 not upgraded.
+Need to get 30.5 MB of archives.
+After this operation, 111 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2-0ubuntu5.18.04.1 [110 kB]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 java-common all 0.63ubuntu1~02 [7032 B]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libavahi-common-data amd64 0.7-3.1ubuntu1.1 [22.1 kB]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libavahi-common3 amd64 0.7-3.1ubuntu1.1 [21.7 kB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libavahi-client3 amd64 0.7-3.1ubuntu1.1 [25.3 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcups2 amd64 2.2.7-1ubuntu2.2 [211 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 liblcms2-2 amd64 2.9-1ubuntu0.1 [139 kB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libjpeg8 amd64 8c-2ubuntu8 [2194 B]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 fonts-dejavu-core all 2.37-1 [1041 kB]
+Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 fontconfig-config all 2.12.6-0ubuntu2 [55.8 kB]
+Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libfontconfig1 amd64 2.12.6-0ubuntu2 [137 kB]
+Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libnspr4 amd64 2:4.18-1ubuntu1 [112 kB]
+Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libnss3 amd64 2:3.35-2ubuntu2 [1135 kB]
+Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libpcsclite1 amd64 1.8.23-1 [21.3 kB]
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libxi6 amd64 2:1.7.9-1 [29.2 kB]
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libxrender1 amd64 1:0.9.10-1 [18.7 kB]
+Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 x11-common all 1:7.7+19ubuntu7.1 [22.5 kB]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libxtst6 amd64 2:1.2.3-1 [12.8 kB]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 openjdk-8-jre-headless amd64 8u191-b12-0ubuntu0.18.04.1 [27.3 MB]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ca-certificates-java all 20180516ubuntu1~18.04.1 [12.2 kB]
+Fetched 30.5 MB in 1s (35.9 MB/s)
+Selecting previously unselected package libjpeg-turbo8:amd64.
+(Reading database ... 56473 files and directories currently installed.)
+Preparing to unpack .../00-libjpeg-turbo8_1.5.2-0ubuntu5.18.04.1_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (1.5.2-0ubuntu5.18.04.1) ...
+Selecting previously unselected package java-common.
+Preparing to unpack .../01-java-common_0.63ubuntu1~02_all.deb ...
+Unpacking java-common (0.63ubuntu1~02) ...
+Selecting previously unselected package libavahi-common-data:amd64.
+Preparing to unpack .../02-libavahi-common-data_0.7-3.1ubuntu1.1_amd64.deb ...
+Unpacking libavahi-common-data:amd64 (0.7-3.1ubuntu1.1) ...
+Selecting previously unselected package libavahi-common3:amd64.
+Preparing to unpack .../03-libavahi-common3_0.7-3.1ubuntu1.1_amd64.deb ...
+Unpacking libavahi-common3:amd64 (0.7-3.1ubuntu1.1) ...
+Selecting previously unselected package libavahi-client3:amd64.
+Preparing to unpack .../04-libavahi-client3_0.7-3.1ubuntu1.1_amd64.deb ...
+Unpacking libavahi-client3:amd64 (0.7-3.1ubuntu1.1) ...
+Selecting previously unselected package libcups2:amd64.
+Preparing to unpack .../05-libcups2_2.2.7-1ubuntu2.2_amd64.deb ...
+Unpacking libcups2:amd64 (2.2.7-1ubuntu2.2) ...
+Selecting previously unselected package liblcms2-2:amd64.
+Preparing to unpack .../06-liblcms2-2_2.9-1ubuntu0.1_amd64.deb ...
+Unpacking liblcms2-2:amd64 (2.9-1ubuntu0.1) ...
+Selecting previously unselected package libjpeg8:amd64.
+Preparing to unpack .../07-libjpeg8_8c-2ubuntu8_amd64.deb ...
+Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
+Selecting previously unselected package fonts-dejavu-core.
+Preparing to unpack .../08-fonts-dejavu-core_2.37-1_all.deb ...
+Unpacking fonts-dejavu-core (2.37-1) ...
+Selecting previously unselected package fontconfig-config.
+Preparing to unpack .../09-fontconfig-config_2.12.6-0ubuntu2_all.deb ...
+Unpacking fontconfig-config (2.12.6-0ubuntu2) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../10-libfontconfig1_2.12.6-0ubuntu2_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.12.6-0ubuntu2) ...
+Selecting previously unselected package libnspr4:amd64.
+Preparing to unpack .../11-libnspr4_2%3a4.18-1ubuntu1_amd64.deb ...
+Unpacking libnspr4:amd64 (2:4.18-1ubuntu1) ...
+Selecting previously unselected package libnss3:amd64.
+Preparing to unpack .../12-libnss3_2%3a3.35-2ubuntu2_amd64.deb ...
+Unpacking libnss3:amd64 (2:3.35-2ubuntu2) ...
+Selecting previously unselected package libpcsclite1:amd64.
+Preparing to unpack .../13-libpcsclite1_1.8.23-1_amd64.deb ...
+Unpacking libpcsclite1:amd64 (1.8.23-1) ...
+Selecting previously unselected package libxi6:amd64.
+Preparing to unpack .../14-libxi6_2%3a1.7.9-1_amd64.deb ...
+Unpacking libxi6:amd64 (2:1.7.9-1) ...
+Selecting previously unselected package libxrender1:amd64.
+Preparing to unpack .../15-libxrender1_1%3a0.9.10-1_amd64.deb ...
+Unpacking libxrender1:amd64 (1:0.9.10-1) ...
+Selecting previously unselected package x11-common.
+Preparing to unpack .../16-x11-common_1%3a7.7+19ubuntu7.1_all.deb ...
+dpkg-query: no packages found matching nux-tools
+Unpacking x11-common (1:7.7+19ubuntu7.1) ...
+Selecting previously unselected package libxtst6:amd64.
+Preparing to unpack .../17-libxtst6_2%3a1.2.3-1_amd64.deb ...
+Unpacking libxtst6:amd64 (2:1.2.3-1) ...
+Selecting previously unselected package openjdk-8-jre-headless:amd64.
+Preparing to unpack .../18-openjdk-8-jre-headless_8u191-b12-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking openjdk-8-jre-headless:amd64 (8u191-b12-0ubuntu0.18.04.1) ...
+Selecting previously unselected package ca-certificates-java.
+Preparing to unpack .../19-ca-certificates-java_20180516ubuntu1~18.04.1_all.deb ...
+Unpacking ca-certificates-java (20180516ubuntu1~18.04.1) ...
+Setting up libxi6:amd64 (2:1.7.9-1) ...
+Processing triggers for ureadahead (0.100.0-20) ...
+Setting up liblcms2-2:amd64 (2.9-1ubuntu0.1) ...
+Setting up libpcsclite1:amd64 (1.8.23-1) ...
+Setting up fonts-dejavu-core (2.37-1) ...
+Setting up java-common (0.63ubuntu1~02) ...
+Setting up libjpeg-turbo8:amd64 (1.5.2-0ubuntu5.18.04.1) ...
+Setting up libnspr4:amd64 (2:4.18-1ubuntu1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for systemd (237-3ubuntu10.3) ...
+Setting up libxrender1:amd64 (1:0.9.10-1) ...
+Processing triggers for man-db (2.8.3-2) ...
+Setting up x11-common (1:7.7+19ubuntu7.1) ...
+update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+Processing triggers for ca-certificates (20180409) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+Setting up libavahi-common-data:amd64 (0.7-3.1ubuntu1.1) ...
+Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
+Setting up fontconfig-config (2.12.6-0ubuntu2) ...
+Setting up libnss3:amd64 (2:3.35-2ubuntu2) ...
+Setting up libxtst6:amd64 (2:1.2.3-1) ...
+Setting up libavahi-common3:amd64 (0.7-3.1ubuntu1.1) ...
+Setting up libfontconfig1:amd64 (2.12.6-0ubuntu2) ...
+Setting up libavahi-client3:amd64 (0.7-3.1ubuntu1.1) ...
+Setting up libcups2:amd64 (2.2.7-1ubuntu2.2) ...
+Setting up ca-certificates-java (20180516ubuntu1~18.04.1) ...
+head: cannot open '/etc/ssl/certs/java/cacerts' for reading: No such file or directory
+Adding debian:GlobalSign_Root_CA.pem
+Adding debian:SZAFIR_ROOT_CA2.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+Adding debian:AffirmTrust_Premium.pem
+Adding debian:Buypass_Class_2_Root_CA.pem
+Adding debian:DigiCert_Assured_ID_Root_CA.pem
+Adding debian:Amazon_Root_CA_4.pem
+Adding debian:Actalis_Authentication_Root_CA.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+Adding debian:QuoVadis_Root_CA_2_G3.pem
+Adding debian:TrustCor_ECA-1.pem
+Adding debian:GlobalSign_Root_CA_-_R2.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+Adding debian:QuoVadis_Root_CA_1_G3.pem
+Adding debian:Entrust_Root_Certification_Authority.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+Adding debian:GeoTrust_Primary_Certification_Authority_-_G3.pem
+Adding debian:VeriSign_Universal_Root_Certification_Authority.pem
+Adding debian:CFCA_EV_ROOT.pem
+Adding debian:Comodo_AAA_Services_root.pem
+Adding debian:DST_Root_CA_X3.pem
+Adding debian:TrustCor_RootCert_CA-2.pem
+Adding debian:XRamp_Global_CA_Root.pem
+Adding debian:SSL.com_Root_Certification_Authority_ECC.pem
+Adding debian:SecureTrust_CA.pem
+Adding debian:USERTrust_RSA_Certification_Authority.pem
+Adding debian:SwissSign_Gold_CA_-_G2.pem
+Adding debian:AffirmTrust_Networking.pem
+Adding debian:OpenTrust_Root_CA_G3.pem
+Adding debian:USERTrust_ECC_Certification_Authority.pem
+Adding debian:ePKI_Root_Certification_Authority.pem
+Adding debian:Certinomis_-_Root_CA.pem
+Adding debian:TWCA_Global_Root_CA.pem
+Adding debian:COMODO_Certification_Authority.pem
+Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+Adding debian:Network_Solutions_Certificate_Authority.pem
+Adding debian:Staat_der_Nederlanden_Root_CA_-_G2.pem
+Adding debian:TrustCor_RootCert_CA-1.pem
+Adding debian:TÜRKTRUST_Elektronik_Sertifika_Hizmet_Saglayicisi_H5.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_ECC.pem
+Adding debian:thawte_Primary_Root_CA_-_G3.pem
+Adding debian:EE_Certification_Centre_Root_CA.pem
+Adding debian:Starfield_Class_2_CA.pem
+Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+Adding debian:TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+Adding debian:ACCVRAIZ1.pem
+Adding debian:Atos_TrustedRoot_2011.pem
+Adding debian:DigiCert_Global_Root_CA.pem
+Adding debian:TeliaSonera_Root_CA_v1.pem
+Adding debian:GDCA_TrustAUTH_R5_ROOT.pem
+Adding debian:DigiCert_Assured_ID_Root_G3.pem
+Adding debian:Baltimore_CyberTrust_Root.pem
+Adding debian:AddTrust_External_Root.pem
+Adding debian:E-Tugra_Certification_Authority.pem
+Adding debian:thawte_Primary_Root_CA.pem
+Adding debian:DigiCert_Global_Root_G2.pem
+Adding debian:ISRG_Root_X1.pem
+Adding debian:Secure_Global_CA.pem
+Adding debian:Amazon_Root_CA_1.pem
+Adding debian:GeoTrust_Primary_Certification_Authority_-_G2.pem
+Adding debian:Certum_Trusted_Network_CA_2.pem
+Adding debian:QuoVadis_Root_CA_3.pem
+Adding debian:Taiwan_GRCA.pem
+Adding debian:Security_Communication_RootCA2.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+Adding debian:Cybertrust_Global_Root.pem
+Adding debian:Hongkong_Post_Root_CA_1.pem
+Adding debian:Izenpe.com.pem
+Adding debian:Global_Chambersign_Root_-_2008.pem
+Adding debian:Go_Daddy_Class_2_CA.pem
+Adding debian:Certplus_Class_2_Primary_CA.pem
+Adding debian:GeoTrust_Universal_CA.pem
+Adding debian:AffirmTrust_Premium_ECC.pem
+Adding debian:GeoTrust_Primary_Certification_Authority.pem
+Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+Adding debian:DigiCert_Global_Root_G3.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+Adding debian:Chambers_of_Commerce_Root_-_2008.pem
+Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
+Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+Adding debian:AC_RAIZ_FNMT-RCM.pem
+Adding debian:DigiCert_Assured_ID_Root_G2.pem
+Adding debian:Security_Communication_Root_CA.pem
+Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+Adding debian:OpenTrust_Root_CA_G1.pem
+Adding debian:AffirmTrust_Commercial.pem
+Adding debian:SecureSign_RootCA11.pem
+Adding debian:GlobalSign_Root_CA_-_R3.pem
+Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+Adding debian:GeoTrust_Universal_CA_2.pem
+Adding debian:Certplus_Root_CA_G2.pem
+Adding debian:Staat_der_Nederlanden_EV_Root_CA.pem
+Adding debian:certSIGN_ROOT_CA.pem
+Adding debian:Buypass_Class_3_Root_CA.pem
+Adding debian:TWCA_Root_Certification_Authority.pem
+Adding debian:COMODO_ECC_Certification_Authority.pem
+Adding debian:OISTE_WISeKey_Global_Root_GA_CA.pem
+Adding debian:Certplus_Root_CA_G1.pem
+Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+Adding debian:CA_Disig_Root_R2.pem
+Adding debian:GeoTrust_Global_CA.pem
+Adding debian:QuoVadis_Root_CA_2.pem
+Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+Adding debian:DigiCert_Trusted_Root_G4.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+Adding debian:Sonera_Class_2_Root_CA.pem
+Adding debian:QuoVadis_Root_CA_3_G3.pem
+Adding debian:EC-ACC.pem
+Adding debian:Amazon_Root_CA_2.pem
+Adding debian:Deutsche_Telekom_Root_CA_2.pem
+Adding debian:SwissSign_Silver_CA_-_G2.pem
+Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+Adding debian:Amazon_Root_CA_3.pem
+Adding debian:OpenTrust_Root_CA_G2.pem
+Adding debian:COMODO_RSA_Certification_Authority.pem
+Adding debian:Certum_Trusted_Network_CA.pem
+Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+Adding debian:Trustis_FPS_Root_CA.pem
+Adding debian:NetLock_Arany_=Class_Gold=_Fotanúsítvány.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+Adding debian:Visa_eCommerce_Root.pem
+Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+Adding debian:QuoVadis_Root_CA.pem
+Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+Adding debian:Certigna.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2011.pem
+Adding debian:Staat_der_Nederlanden_Root_CA_-_G3.pem
+Adding debian:SSL.com_Root_Certification_Authority_RSA.pem
+Adding debian:thawte_Primary_Root_CA_-_G2.pem
+Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+Adding debian:LuxTrust_Global_Root_2.pem
+done.
+Processing triggers for ca-certificates (20180409) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+
+done.
+done.
+Setting up openjdk-8-jre-headless:amd64 (8u191-b12-0ubuntu0.18.04.1) ...
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/rmid to provide /usr/bin/rmid (rmid) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java to provide /usr/bin/java (java) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/jjs to provide /usr/bin/jjs (jjs) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/pack200 to provide /usr/bin/pack200 (pack200) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/unpack200 to provide /usr/bin/unpack200 (unpack200) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/orbd to provide /usr/bin/orbd (orbd) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/servertool to provide /usr/bin/servertool (servertool) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/tnameserv to provide /usr/bin/tnameserv (tnameserv) in auto mode
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-20) ...
+Processing triggers for systemd (237-3ubuntu10.3) ...
+root@ip-172-31-87-8:~# java -version
+openjdk version "1.8.0_191"
+OpenJDK Runtime Environment (build 1.8.0_191-8u191-b12-0ubuntu0.18.04.1-b12)
+OpenJDK 64-Bit Server VM (build 25.191-b12, mixed mode)
+root@ip-172-31-87-8:~#
+Using username "ubuntu".
+Authenticating with public key "imported-openssh-key"
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1021-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Dec 27 06:27:48 UTC 2018
+
+  System load:  0.0               Processes:           90
+  Usage of /:   17.4% of 7.69GB   Users logged in:     1
+  Memory usage: 18%               IP address for eth0: 172.31.87.8
+  Swap usage:   0%
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+126 packages can be updated.
+49 updates are security updates.
+
+
+Last login: Thu Dec 27 06:12:27 2018 from 124.123.85.158
+ubuntu@ip-172-31-87-8:~$ sudo -i
+root@ip-172-31-87-8:~# update-alternatives --config java
+There is only one alternative in link group java (providing /usr/bin/java): /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+Nothing to configure.
+root@ip-172-31-87-8:~# cat>>/etc/environment
+ /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
+^C
+root@ip-172-31-87-8:~# vi /etc/environment
+root@ip-172-31-87-8:~# source /etc/environment
+root@ip-172-31-87-8:~# echo $JAVA_HOME
+/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+root@ip-172-31-87-8:~# java -version
+openjdk version "1.8.0_191"
+OpenJDK Runtime Environment (build 1.8.0_191-8u191-b12-0ubuntu0.18.04.1-b12)
+OpenJDK 64-Bit Server VM (build 25.191-b12, mixed mode)
+root@ip-172-31-87-8:~# mkdir /opt/maven
+root@ip-172-31-87-8:~# cd /opt/maven
+root@ip-172-31-87-8:/opt/maven# apt update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+120 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@ip-172-31-87-8:/opt/maven# apt install maven
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libaopalliance-java libapache-pom-java libatinject-jsr330-api-java
+  libcdi-api-java libcommons-cli-java libcommons-io-java libcommons-lang3-java
+  libcommons-parent-java libgeronimo-annotation-1.3-spec-java
+  libgeronimo-interceptor-3.0-spec-java libguava-java libguice-java
+  libhawtjni-runtime-java libjansi-java libjansi-native-java libjsr305-java
+  libmaven-parent-java libmaven-resolver-java libmaven-shared-utils-java
+  libmaven3-core-java libplexus-cipher-java libplexus-classworlds-java
+  libplexus-component-annotations-java libplexus-interpolation-java
+  libplexus-sec-dispatcher-java libplexus-utils2-java libsisu-inject-java
+  libsisu-plexus-java libslf4j-java libwagon-file-java
+  libwagon-http-shaded-java libwagon-provider-api-java
+Suggested packages:
+  libaopalliance-java-doc libatinject-jsr330-api-java-doc libservlet3.1-java
+  libcommons-io-java-doc libcommons-lang3-java-doc libasm-java libcglib-java
+  libjsr305-java-doc libmaven-shared-utils-java-doc liblogback-java
+  libplexus-cipher-java-doc libplexus-classworlds-java-doc
+  libplexus-interpolation-java-doc libplexus-sec-dispatcher-java-doc
+  libplexus-utils2-java-doc junit4 testng libcommons-logging-java
+  liblog4j1.2-java
+The following NEW packages will be installed:
+  libaopalliance-java libapache-pom-java libatinject-jsr330-api-java
+  libcdi-api-java libcommons-cli-java libcommons-io-java libcommons-lang3-java
+  libcommons-parent-java libgeronimo-annotation-1.3-spec-java
+  libgeronimo-interceptor-3.0-spec-java libguava-java libguice-java
+  libhawtjni-runtime-java libjansi-java libjansi-native-java libjsr305-java
+  libmaven-parent-java libmaven-resolver-java libmaven-shared-utils-java
+  libmaven3-core-java libplexus-cipher-java libplexus-classworlds-java
+  libplexus-component-annotations-java libplexus-interpolation-java
+  libplexus-sec-dispatcher-java libplexus-utils2-java libsisu-inject-java
+  libsisu-plexus-java libslf4j-java libwagon-file-java
+  libwagon-http-shaded-java libwagon-provider-api-java maven
+0 upgraded, 33 newly installed, 0 to remove and 120 not upgraded.
+Need to get 8875 kB of archives.
+After this operation, 11.7 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libapache-pom-java all 18-1 [4720 B]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libatinject-jsr330-api-java all 1.0+ds1-5 [5348 B]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libgeronimo-interceptor-3.0-spec-java all 1.0.1-4fakesync [8616 B]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libcdi-api-java all 1.2-2 [54.5 kB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libcommons-cli-java all 1.4-1 [53.8 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libcommons-parent-java all 43-1 [10.8 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libcommons-io-java all 2.6-2 [198 kB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libcommons-lang3-java all 3.5-2ubuntu1 [438 kB]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libgeronimo-annotation-1.3-spec-java all 1.0-1 [10.7 kB]
+Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libjsr305-java all 0.1~+svn49-10 [26.5 kB]
+Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libguava-java all 19.0-1 [2028 kB]
+Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libaopalliance-java all 20070526-6 [9084 B]
+Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libguice-java all 4.0-4 [853 kB]
+Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libhawtjni-runtime-java all 1.15-2 [27.1 kB]
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libjansi-native-java all 1.7-1 [19.4 kB]
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libjansi-java all 1.16-1 [36.2 kB]
+Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libmaven-parent-java all 27-2 [4450 B]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libplexus-utils2-java all 3.0.24-3 [246 kB]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libwagon-provider-api-java all 3.0.0-2 [48.2 kB]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libmaven-resolver-java all 1.1.0-3 [548 kB]
+Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libmaven-shared-utils-java all 3.1.0-2 [146 kB]
+Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libplexus-cipher-java all 1.7-3 [15.1 kB]
+Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libplexus-classworlds-java all 2.5.2-2 [49.3 kB]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libplexus-component-annotations-java all 1.7.1-7 [6596 B]
+Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libplexus-interpolation-java all 1.24-1 [73.4 kB]
+Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libplexus-sec-dispatcher-java all 1.4-3 [28.0 kB]
+Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libslf4j-java all 1.7.25-3 [141 kB]
+Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libsisu-inject-java all 0.3.2-2 [346 kB]
+Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libsisu-plexus-java all 0.3.3-3 [182 kB]
+Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libmaven3-core-java all 3.5.2-2 [1472 kB]
+Get:31 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libwagon-file-java all 3.0.0-2 [7960 B]
+Get:32 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 libwagon-http-shaded-java all 3.0.0-2 [1757 kB]
+Get:33 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 maven all 3.5.2-2 [19.2 kB]
+Fetched 8875 kB in 0s (19.0 MB/s)
+Extracting templates from packages: 100%
+Selecting previously unselected package libapache-pom-java.
+(Reading database ... 56961 files and directories currently installed.)
+Preparing to unpack .../00-libapache-pom-java_18-1_all.deb ...
+Unpacking libapache-pom-java (18-1) ...
+Selecting previously unselected package libatinject-jsr330-api-java.
+Preparing to unpack .../01-libatinject-jsr330-api-java_1.0+ds1-5_all.deb ...
+Unpacking libatinject-jsr330-api-java (1.0+ds1-5) ...
+Selecting previously unselected package libgeronimo-interceptor-3.0-spec-java.
+Preparing to unpack .../02-libgeronimo-interceptor-3.0-spec-java_1.0.1-4fakesync_all.deb ...
+Unpacking libgeronimo-interceptor-3.0-spec-java (1.0.1-4fakesync) ...
+Selecting previously unselected package libcdi-api-java.
+Preparing to unpack .../03-libcdi-api-java_1.2-2_all.deb ...
+Unpacking libcdi-api-java (1.2-2) ...
+Selecting previously unselected package libcommons-cli-java.
+Preparing to unpack .../04-libcommons-cli-java_1.4-1_all.deb ...
+Unpacking libcommons-cli-java (1.4-1) ...
+Selecting previously unselected package libcommons-parent-java.
+Preparing to unpack .../05-libcommons-parent-java_43-1_all.deb ...
+Unpacking libcommons-parent-java (43-1) ...
+Selecting previously unselected package libcommons-io-java.
+Preparing to unpack .../06-libcommons-io-java_2.6-2_all.deb ...
+Unpacking libcommons-io-java (2.6-2) ...
+Selecting previously unselected package libcommons-lang3-java.
+Preparing to unpack .../07-libcommons-lang3-java_3.5-2ubuntu1_all.deb ...
+Unpacking libcommons-lang3-java (3.5-2ubuntu1) ...
+Selecting previously unselected package libgeronimo-annotation-1.3-spec-java.
+Preparing to unpack .../08-libgeronimo-annotation-1.3-spec-java_1.0-1_all.deb ...
+Unpacking libgeronimo-annotation-1.3-spec-java (1.0-1) ...
+Selecting previously unselected package libjsr305-java.
+Preparing to unpack .../09-libjsr305-java_0.1~+svn49-10_all.deb ...
+Unpacking libjsr305-java (0.1~+svn49-10) ...
+Selecting previously unselected package libguava-java.
+Preparing to unpack .../10-libguava-java_19.0-1_all.deb ...
+Unpacking libguava-java (19.0-1) ...
+Selecting previously unselected package libaopalliance-java.
+Preparing to unpack .../11-libaopalliance-java_20070526-6_all.deb ...
+Unpacking libaopalliance-java (20070526-6) ...
+Selecting previously unselected package libguice-java.
+Preparing to unpack .../12-libguice-java_4.0-4_all.deb ...
+Unpacking libguice-java (4.0-4) ...
+Selecting previously unselected package libhawtjni-runtime-java.
+Preparing to unpack .../13-libhawtjni-runtime-java_1.15-2_all.deb ...
+Unpacking libhawtjni-runtime-java (1.15-2) ...
+Selecting previously unselected package libjansi-native-java.
+Preparing to unpack .../14-libjansi-native-java_1.7-1_all.deb ...
+Unpacking libjansi-native-java (1.7-1) ...
+Selecting previously unselected package libjansi-java.
+Preparing to unpack .../15-libjansi-java_1.16-1_all.deb ...
+Unpacking libjansi-java (1.16-1) ...
+Selecting previously unselected package libmaven-parent-java.
+Preparing to unpack .../16-libmaven-parent-java_27-2_all.deb ...
+Unpacking libmaven-parent-java (27-2) ...
+Selecting previously unselected package libplexus-utils2-java.
+Preparing to unpack .../17-libplexus-utils2-java_3.0.24-3_all.deb ...
+Unpacking libplexus-utils2-java (3.0.24-3) ...
+Selecting previously unselected package libwagon-provider-api-java.
+Preparing to unpack .../18-libwagon-provider-api-java_3.0.0-2_all.deb ...
+Unpacking libwagon-provider-api-java (3.0.0-2) ...
+Selecting previously unselected package libmaven-resolver-java.
+Preparing to unpack .../19-libmaven-resolver-java_1.1.0-3_all.deb ...
+Unpacking libmaven-resolver-java (1.1.0-3) ...
+Selecting previously unselected package libmaven-shared-utils-java.
+Preparing to unpack .../20-libmaven-shared-utils-java_3.1.0-2_all.deb ...
+Unpacking libmaven-shared-utils-java (3.1.0-2) ...
+Selecting previously unselected package libplexus-cipher-java.
+Preparing to unpack .../21-libplexus-cipher-java_1.7-3_all.deb ...
+Unpacking libplexus-cipher-java (1.7-3) ...
+Selecting previously unselected package libplexus-classworlds-java.
+Preparing to unpack .../22-libplexus-classworlds-java_2.5.2-2_all.deb ...
+Unpacking libplexus-classworlds-java (2.5.2-2) ...
+Selecting previously unselected package libplexus-component-annotations-java.
+Preparing to unpack .../23-libplexus-component-annotations-java_1.7.1-7_all.deb ...
+Unpacking libplexus-component-annotations-java (1.7.1-7) ...
+Selecting previously unselected package libplexus-interpolation-java.
+Preparing to unpack .../24-libplexus-interpolation-java_1.24-1_all.deb ...
+Unpacking libplexus-interpolation-java (1.24-1) ...
+Selecting previously unselected package libplexus-sec-dispatcher-java.
+Preparing to unpack .../25-libplexus-sec-dispatcher-java_1.4-3_all.deb ...
+Unpacking libplexus-sec-dispatcher-java (1.4-3) ...
+Selecting previously unselected package libslf4j-java.
+Preparing to unpack .../26-libslf4j-java_1.7.25-3_all.deb ...
+Unpacking libslf4j-java (1.7.25-3) ...
+Selecting previously unselected package libsisu-inject-java.
+Preparing to unpack .../27-libsisu-inject-java_0.3.2-2_all.deb ...
+Unpacking libsisu-inject-java (0.3.2-2) ...
+Selecting previously unselected package libsisu-plexus-java.
+Preparing to unpack .../28-libsisu-plexus-java_0.3.3-3_all.deb ...
+Unpacking libsisu-plexus-java (0.3.3-3) ...
+Selecting previously unselected package libmaven3-core-java.
+Preparing to unpack .../29-libmaven3-core-java_3.5.2-2_all.deb ...
+Unpacking libmaven3-core-java (3.5.2-2) ...
+Selecting previously unselected package libwagon-file-java.
+Preparing to unpack .../30-libwagon-file-java_3.0.0-2_all.deb ...
+Unpacking libwagon-file-java (3.0.0-2) ...
+Selecting previously unselected package libwagon-http-shaded-java.
+Preparing to unpack .../31-libwagon-http-shaded-java_3.0.0-2_all.deb ...
+Unpacking libwagon-http-shaded-java (3.0.0-2) ...
+Selecting previously unselected package maven.
+Preparing to unpack .../32-maven_3.5.2-2_all.deb ...
+Unpacking maven (3.5.2-2) ...
+Setting up libslf4j-java (1.7.25-3) ...
+Setting up libplexus-classworlds-java (2.5.2-2) ...
+Setting up libhawtjni-runtime-java (1.15-2) ...
+Setting up libplexus-cipher-java (1.7-3) ...
+Setting up libplexus-interpolation-java (1.24-1) ...
+Setting up libplexus-component-annotations-java (1.7.1-7) ...
+Setting up libplexus-utils2-java (3.0.24-3) ...
+Setting up libwagon-provider-api-java (3.0.0-2) ...
+Setting up libjsr305-java (0.1~+svn49-10) ...
+Setting up libgeronimo-interceptor-3.0-spec-java (1.0.1-4fakesync) ...
+Setting up libmaven-resolver-java (1.1.0-3) ...
+Setting up libjansi-native-java (1.7-1) ...
+Setting up libwagon-http-shaded-java (3.0.0-2) ...
+Setting up libapache-pom-java (18-1) ...
+Setting up libatinject-jsr330-api-java (1.0+ds1-5) ...
+Setting up libmaven-parent-java (27-2) ...
+Setting up libaopalliance-java (20070526-6) ...
+Setting up libgeronimo-annotation-1.3-spec-java (1.0-1) ...
+Setting up libcommons-cli-java (1.4-1) ...
+Setting up libplexus-sec-dispatcher-java (1.4-3) ...
+Setting up libjansi-java (1.16-1) ...
+Setting up libguava-java (19.0-1) ...
+Setting up libwagon-file-java (3.0.0-2) ...
+Setting up libcommons-parent-java (43-1) ...
+Setting up libcdi-api-java (1.2-2) ...
+Setting up libcommons-lang3-java (3.5-2ubuntu1) ...
+Setting up libcommons-io-java (2.6-2) ...
+Setting up libguice-java (4.0-4) ...
+Setting up libmaven-shared-utils-java (3.1.0-2) ...
+Setting up libsisu-inject-java (0.3.2-2) ...
+Setting up libsisu-plexus-java (0.3.3-3) ...
+Setting up libmaven3-core-java (3.5.2-2) ...
+Setting up maven (3.5.2-2) ...
+update-alternatives: using /usr/share/maven/bin/mvn to provide /usr/bin/mvn (mvn) in auto mode
+root@ip-172-31-87-8:/opt/maven# mvn -version
+Apache Maven 3.5.2
+Maven home: /usr/share/maven
+Java version: 1.8.0_191, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-openjdk-amd64/jre
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "4.15.0-1021-aws", arch: "amd64", family: "unix"
+root@ip-172-31-87-8:/opt/maven# cd ..
+root@ip-172-31-87-8:/opt# cd ..
+root@ip-172-31-87-8:/# sudo -i
+root@ip-172-31-87-8:~# apt-get install git
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Suggested packages:
+  git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+  gitweb git-cvs git-mediawiki git-svn
+The following packages will be upgraded:
+  git
+1 upgraded, 0 newly installed, 0 to remove and 119 not upgraded.
+Need to get 3907 kB of archives.
+After this operation, 20.5 kB of additional disk space will be used.
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 git amd64 1:2.17.1-1ubuntu0.4 [3907 kB]
+Fetched 3907 kB in 0s (48.7 MB/s)
+(Reading database ... 57887 files and directories currently installed.)
+Preparing to unpack .../git_1%3a2.17.1-1ubuntu0.4_amd64.deb ...
+Unpacking git (1:2.17.1-1ubuntu0.4) over (1:2.17.1-1ubuntu0.1) ...
+Setting up git (1:2.17.1-1ubuntu0.4) ...
+root@ip-172-31-87-8:~#
+Using username "ubuntu".
+Authenticating with public key "imported-openssh-key"
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1021-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Dec 27 06:54:24 UTC 2018
+
+  System load:  0.0               Processes:           96
+  Usage of /:   17.7% of 7.69GB   Users logged in:     1
+  Memory usage: 19%               IP address for eth0: 172.31.87.8
+  Swap usage:   0%
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+125 packages can be updated.
+48 updates are security updates.
+
+
+Last login: Thu Dec 27 06:27:49 2018 from 124.123.85.158
+ubuntu@ip-172-31-87-8:~$

@@ -1,0 +1,71 @@
+---------------------k8s master--------------------------------------------
+1. launch an instance.
+2. take instance type as medium or large 
+3. configure the details.
+4.take the ip address of the aws instance and connect to the putty 
+5.sudo -i
+6.vi /etc/hostname (if host is ubuntu or centos/rhel7)
+7.hostname type hostname what ever type in above path(it open a vi and type master/agent)
+8.exec bash
+ hostname master/agent
+ exec bash
+9. sudo -i
+10. apt-get update
+11. apt-get install -y apt-transport-https
+12. curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+13. a)cat <<EOF >/etc/apt/sources.list.d/kubernetes.list (execute one by one)
+   b)deb http://apt.kubernetes.io/ kubernetes-xenial main
+   c)EOF
+14. apt-get update -y
+15. apt-get install -y docker.io 
+    or use the following commands for latest docker version 
+    curl -fsSL get.docker.com -o get-docker.sh
+    sh get-docker.sh 
+16. apt-get install -y kubelet kubeadm kubectl ----keep cat eof token in this file
+we should execute the following commands on only kubernete master
+17. kubeadm init  (after the command is executed copy the last link and save it in notepad
+[kubeadm join 172.31.93.226:6443 --token nd1w8o.bkndfsyl3cs3hecd --discovery-token-ca-cert-hash sha256:40d196e6d36ee6d2a7564497737288853fd1daa07985f990baa0260b1a4dc2a9])
+18. kubectl get nodes (1st check this cmd it check the status ready or not and later do the next steps up to24)
+19.mkdir -p $HOME/.kube
+20. cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+21. chown $(id -u):$(id -g) $HOME/.kube/config
+22. kubectl get nodes 
+    after excute network command
+23.kubectl apply -f https://git.io/weave-kube-1.6
+24.kubectl get nodes
+25.kubectl get pods --all-namespaces
+26.a) kubectl get nodes                  (up to here execute in master)
+The following command allow you to create/manage pods on kubernetes master
+26.b)
+27.
+28.
+29.
+30. 
+----------------------------------------k8s agent---------------------------------------------
+1.ubuntu@ip-172-31-94-178:~$ sudo -i
+2.root@ip-172-31-94-178:~# vi /etc/hostname
+3.root@ip-172-31-94-178:~# exec bash
+4.root@ip-172-31-94-178:~# hostname agent
+5.root@ip-172-31-94-178:~#exec bash
+6.sudo -i
+7. apt-get update
+8. apt-get install -y apt-transport-https
+9. curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+10.a)cat <<EOF >/etc/apt/sources.list.d/kubernetes.list (execute one by one)
+   b)deb http://apt.kubernetes.io/ kubernetes-xenial main
+   c)EOF
+11. apt-get update -y
+12. apt-get install -y docker.io 
+13. apt-get install -y kubelet kubeadm kubectl 
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+----------------------------------------------sock shop-------------------------------------------------
+1. do it in master.
+2. root@master:~# kubectl create namespace sock-shop
+namespace/sock-shop created
+3. 
