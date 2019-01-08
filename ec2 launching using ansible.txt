@@ -1,0 +1,119 @@
+---
+- name: Configuring the EC2 Instance
+  hosts: localhost
+  connection: local
+  vars:
+       count: {{ count }}
+       volumes:
+               - device_name: /dev/sda1
+                 volume_size: {{ volume-size }}    
+ 
+- name: Launching an EC2 Instance
+  local_action: ec2
+  instance_type={{ instance_type}}
+  image={{ ami }}
+  region={{ region }}
+  keypair={{ pem }}
+  count={{count}}
+  instance_profile_name={{ instance_profile_name }}
+  group={{ security_group }}
+  wait=true
+  volumes={{volumes}}
+  register: ec2
+ 
+- name: Associating after allocating elastic IP
+  eip:
+      in_vpc: yes
+      reuse_existing_ip_allowed: yes
+      state: present
+      region: "{{ region }}"
+      device_id: "{{ ec2.instance_id[0] }}"
+      register: elastic_ip
+ 
+- name: Waiting for the instance to come
+  local_action: wait_for
+              host={{ item.private_ip }}
+              state=started
+              port=22
+  with_items: ec2.instance
+ 
+- name: Adding tags to the EC2 Instance"
+  local_action: ec2_tag
+              region={{ region }}
+              resource={{ item.id }}
+              state=present
+  with_items: ec2.instances
+  args:
+   tags:
+       Name: "{{ name }}"
+       Env: "{{ Env }}"
+       Type: microservice
+  register: tag    
+------------------------------------------------------------------------------------------------------------
+
+---
+- hosts: localhost
+ tasks:
+
+ - name: Setting up Security Group
+   ec2_Group:
+      name: launch-wizard-7
+      description: rules allowing traffic on port 22 and 80
+      region: ap-south-1
+      rules:
+       - proto: tcp
+         from_port: 80
+         to_port: 80
+         cidr_ip: 0.0.0.0/0
+       - proto: tcp
+         from_port: 22
+         to_port: 22
+         cidr_ip: 0.0.0.0/0
+       rules_egress:
+       - proto: all
+         cidr_ip: 0.0.0.0/0
+
+ - name: Provision a EC2 Instance
+    ec2:
+       key_name: newkeypair
+       region: ap-south-2
+       instance type: t2.micro
+       image: ami-0d773ab7bb2bb1c1
+       wait:  yes
+       wait_timeout: 500
+       count: 1
+       instance_tags:
+         Name: New instance
+         Owner: himana bejawada
+       monitoring: basic
+       vpc_subnet_id: subnet-e9e5a681
+       assign_public_ip: yes
+       group: launch-wizard-7
+    register: ec2_out
+
+  - name: wait SSH to come up
+    wait_for: host={{ item.public_dns_name }}port=22 delay=60 timeout=320 state=started
+    with_items: {{ec2_out.instances}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
